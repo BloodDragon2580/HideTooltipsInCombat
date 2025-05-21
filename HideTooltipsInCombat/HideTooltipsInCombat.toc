@@ -2,7 +2,7 @@
 ## Title:|cffd6266cHideTooltipsInCombat|r
 ## Notes: Blendet Tooltips im Kampf aus.
 ## Author: BloodDragon2580
-## Version: 4.3
+## Version: 4.4
 ## IconTexture: Interface\AddOns\HideTooltipsInCombat\Media\Texture\logo
 
 HideTooltipsInCombat.lua
