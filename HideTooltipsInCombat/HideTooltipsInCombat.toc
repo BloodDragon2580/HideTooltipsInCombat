@@ -1,8 +1,8 @@
-## Interface: 120001
+## Interface: 120000
 ## Title:|cffd6266cHideTooltipsInCombat|r
 ## Notes: Blendet Tooltips im Kampf aus.
 ## Author: BloodDragon2580
-## Version: 7.0
+## Version: 7.1
 ## IconTexture: Interface\AddOns\HideTooltipsInCombat\Media\Texture\logo
 ## SavedVariables: HideTooltipsInCombatDB
 
