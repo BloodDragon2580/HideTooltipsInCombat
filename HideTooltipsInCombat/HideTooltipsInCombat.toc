@@ -1,8 +1,8 @@
-## Interface: 120007, 120005
+## Interface: 120100, 120007, 120005
 ## Title:|cffd6266cHideTooltipsInCombat|r
 ## Notes: Blendet Tooltips im Kampf aus.
 ## Author: BloodDragon2580
-## Version: 7.7
+## Version: 7.8
 ## IconTexture: Interface\AddOns\HideTooltipsInCombat\Media\Texture\logo
 ## SavedVariables: HideTooltipsInCombatDB
 
