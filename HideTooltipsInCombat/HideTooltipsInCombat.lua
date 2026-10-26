@@ -12,8 +12,11 @@ local function MakeL()
         OPT_HIDE_TITLE = "Hide tooltips in combat",
         OPT_HIDE_DESC  = "Default: tooltips are hidden in combat. Hold the override key to show them temporarily.",
 
-        OPT_AURA_TITLE = "Hide my buff/debuff tooltips in combat",
-        OPT_AURA_DESC  = "Hide tooltips on your own buff and debuff icons during combat. When disabled, those tooltips remain visible. The override key still works.",
+        OPT_AURA_TITLE = "My buff/debuff tooltips",
+        OPT_AURA_DESC  = "Choose when tooltips on your own buff and debuff icons are hidden. Independent of the general combat setting. The override key works for combat-only hiding.",
+        AURA_SHOW     = "Always show",
+        AURA_COMBAT   = "Hide only in combat",
+        AURA_ALWAYS   = "Always hide",
 
         OPT_KEY_TITLE  = "Override key in combat",
         OPT_KEY_DESC   = "Hold the key and hover a new target to show tooltips in combat.",
@@ -27,8 +30,11 @@ local function MakeL()
     local loc = GetLocale()
     local t = {
         deDE = {
-            OPT_AURA_TITLE = "Eigene Buff-/Debuff-Tooltips im Kampf ausblenden",
-            OPT_AURA_DESC  = "Versteckt Tooltips der eigenen Buffs und Debuffs im Kampf. Ist diese Option aus, bleiben sie sichtbar. Die Override-Taste funktioniert weiterhin.",
+            OPT_AURA_TITLE = "Eigene Buff-/Debuff-Tooltips",
+            OPT_AURA_DESC  = "Wähle, wann Tooltips deiner eigenen Buffs und Debuffs ausgeblendet werden. Unabhängig von der allgemeinen Kampf-Einstellung. Die Override-Taste wirkt nur bei „Nur im Kampf ausblenden“.",
+            AURA_SHOW     = "Immer anzeigen",
+            AURA_COMBAT   = "Nur im Kampf ausblenden",
+            AURA_ALWAYS   = "Immer ausblenden",
             OPT_HIDE_TITLE = "Tooltips im Kampf verstecken",
             OPT_HIDE_DESC  = "Standard: Tooltips sind im Kampf AUS. Halte die Override-Taste gedrückt, um sie kurz anzuzeigen.",
             OPT_KEY_TITLE  = "Override-Taste im Kampf",
@@ -39,8 +45,11 @@ local function MakeL()
             KEY_NONE  = "Keine (im Kampf immer aus)",
         },
         frFR = {
-            OPT_AURA_TITLE = "Masquer mes info-bulles de buffs/debuffs en combat",
-            OPT_AURA_DESC  = "Masque les info-bulles de vos propres buffs et debuffs en combat. Si l’option est désactivée, elles restent visibles. La touche de substitution reste active.",
+            OPT_AURA_TITLE = "Info-bulles de mes buffs/debuffs",
+            OPT_AURA_DESC  = "Choisissez quand masquer les info-bulles de vos propres buffs et debuffs. Indépendant du réglage général. La touche de substitution fonctionne uniquement en mode combat.",
+            AURA_SHOW     = "Toujours afficher",
+            AURA_COMBAT   = "Masquer uniquement en combat",
+            AURA_ALWAYS   = "Toujours masquer",
             OPT_HIDE_TITLE = "Masquer les info-bulles en combat",
             OPT_HIDE_DESC  = "Par défaut : les info-bulles sont masquées en combat. Maintenez la touche de substitution pour les afficher temporairement.",
             OPT_KEY_TITLE  = "Touche de substitution en combat",
@@ -48,8 +57,11 @@ local function MakeL()
             KEY_ALT="ALT", KEY_SHIFT="MAJ", KEY_CTRL="CTRL", KEY_NONE="Aucune (toujours masquées)",
         },
         esES = {
-            OPT_AURA_TITLE = "Ocultar mis tooltips de beneficios/perjuicios en combate",
-            OPT_AURA_DESC  = "Oculta los tooltips de tus propios beneficios y perjuicios en combate. Si está desactivado, siguen visibles. La tecla de anulación sigue funcionando.",
+            OPT_AURA_TITLE = "Tooltips de mis beneficios/perjuicios",
+            OPT_AURA_DESC  = "Elige cuándo ocultar los tooltips de tus beneficios y perjuicios. Independiente del ajuste general. La tecla de anulación funciona solo con la opción de combate.",
+            AURA_SHOW     = "Mostrar siempre",
+            AURA_COMBAT   = "Ocultar solo en combate",
+            AURA_ALWAYS   = "Ocultar siempre",
             OPT_HIDE_TITLE = "Ocultar descripciones emergentes en combate",
             OPT_HIDE_DESC  = "Por defecto: los tooltips se ocultan en combate. Mantén la tecla de anulación para mostrarlos temporalmente.",
             OPT_KEY_TITLE  = "Tecla de anulación en combate",
@@ -57,8 +69,11 @@ local function MakeL()
             KEY_ALT="ALT", KEY_SHIFT="MAYÚS", KEY_CTRL="CTRL", KEY_NONE="Ninguna (siempre ocultos)",
         },
         esMX = {
-            OPT_AURA_TITLE = "Ocultar mis tooltips de beneficios/perjuicios en combate",
-            OPT_AURA_DESC  = "Oculta los tooltips de tus propios beneficios y perjuicios en combate. Si está desactivado, siguen visibles. La tecla de anulación sigue funcionando.",
+            OPT_AURA_TITLE = "Tooltips de mis beneficios/perjuicios",
+            OPT_AURA_DESC  = "Elige cuándo ocultar los tooltips de tus beneficios y perjuicios. Independiente del ajuste general. La tecla de anulación funciona solo con la opción de combate.",
+            AURA_SHOW     = "Mostrar siempre",
+            AURA_COMBAT   = "Ocultar solo en combate",
+            AURA_ALWAYS   = "Ocultar siempre",
             OPT_HIDE_TITLE = "Ocultar tooltips en combate",
             OPT_HIDE_DESC  = "Por defecto: los tooltips se ocultan en combate. Mantén la tecla de anulación para mostrarlos temporalmente.",
             OPT_KEY_TITLE  = "Tecla de anulación en combate",
@@ -66,8 +81,11 @@ local function MakeL()
             KEY_ALT="ALT", KEY_SHIFT="MAYÚS", KEY_CTRL="CTRL", KEY_NONE="Ninguna (siempre ocultos)",
         },
         itIT = {
-            OPT_AURA_TITLE = "Nascondi i tooltip dei miei buff/debuff in combattimento",
-            OPT_AURA_DESC  = "Nasconde i tooltip dei tuoi buff e debuff in combattimento. Se disattivato, restano visibili. Il tasto di override continua a funzionare.",
+            OPT_AURA_TITLE = "Tooltip dei miei buff/debuff",
+            OPT_AURA_DESC  = "Scegli quando nascondere i tooltip dei tuoi buff e debuff. Indipendente dalle impostazioni generali. Il tasto di override funziona solo per la modalità combattimento.",
+            AURA_SHOW     = "Mostra sempre",
+            AURA_COMBAT   = "Nascondi solo in combattimento",
+            AURA_ALWAYS   = "Nascondi sempre",
             OPT_HIDE_TITLE = "Nascondi tooltip in combattimento",
             OPT_HIDE_DESC  = "Predefinito: i tooltip sono nascosti in combattimento. Tieni premuto il tasto di override per mostrarli temporaneamente.",
             OPT_KEY_TITLE  = "Tasto di override in combattimento",
@@ -75,8 +93,11 @@ local function MakeL()
             KEY_ALT="ALT", KEY_SHIFT="MAIUSC", KEY_CTRL="CTRL", KEY_NONE="Nessuno (sempre nascosti)",
         },
         ptBR = {
-            OPT_AURA_TITLE = "Ocultar dicas dos meus bônus/penalidades em combate",
-            OPT_AURA_DESC  = "Oculta as dicas dos seus próprios efeitos benéficos e prejudiciais em combate. Desativado: elas continuam visíveis. A tecla de substituição continua funcionando.",
+            OPT_AURA_TITLE = "Dicas dos meus bônus/penalidades",
+            OPT_AURA_DESC  = "Escolha quando ocultar as dicas dos seus próprios efeitos. Independente da configuração geral. A tecla de substituição funciona apenas no modo de combate.",
+            AURA_SHOW     = "Sempre mostrar",
+            AURA_COMBAT   = "Ocultar apenas em combate",
+            AURA_ALWAYS   = "Sempre ocultar",
             OPT_HIDE_TITLE = "Ocultar dicas em combate",
             OPT_HIDE_DESC  = "Padrão: as dicas ficam ocultas em combate. Segure a tecla de substituição para mostrar temporariamente.",
             OPT_KEY_TITLE  = "Tecla de substituição em combate",
@@ -84,8 +105,11 @@ local function MakeL()
             KEY_ALT="ALT", KEY_SHIFT="SHIFT", KEY_CTRL="CTRL", KEY_NONE="Nenhuma (sempre ocultas)",
         },
         ruRU = {
-            OPT_AURA_TITLE = "Скрывать подсказки моих эффектов в бою",
-            OPT_AURA_DESC  = "Скрывает подсказки собственных положительных и отрицательных эффектов в бою. Если выключено, они остаются видимыми. Клавиша-переопределение продолжает работать.",
+            OPT_AURA_TITLE = "Подсказки моих эффектов",
+            OPT_AURA_DESC  = "Выберите, когда скрывать подсказки своих положительных и отрицательных эффектов. Не зависит от общей настройки. Клавиша отмены действует только для режима боя.",
+            AURA_SHOW     = "Всегда показывать",
+            AURA_COMBAT   = "Скрывать только в бою",
+            AURA_ALWAYS   = "Всегда скрывать",
             OPT_HIDE_TITLE = "Скрывать подсказки в бою",
             OPT_HIDE_DESC  = "По умолчанию: подсказки скрыты в бою. Удерживайте клавишу-переопределение, чтобы показать их временно.",
             OPT_KEY_TITLE  = "Клавиша-переопределение в бою",
@@ -93,8 +117,11 @@ local function MakeL()
             KEY_ALT="ALT", KEY_SHIFT="SHIFT", KEY_CTRL="CTRL", KEY_NONE="Нет (всегда скрыты)",
         },
         koKR = {
-            OPT_AURA_TITLE = "전투 중 내 강화/약화 효과 툴팁 숨기기",
-            OPT_AURA_DESC  = "전투 중 자신의 강화 및 약화 효과 아이콘 툴팁을 숨깁니다. 끄면 표시됩니다. 임시 표시 키는 계속 작동합니다.",
+            OPT_AURA_TITLE = "내 강화/약화 효과 툴팁",
+            OPT_AURA_DESC  = "내 강화/약화 효과의 툴팁을 숨길 시점을 선택합니다. 일반 전투 설정과 별개입니다. 임시 표시 키는 전투 중 숨기기 모드에서만 작동합니다.",
+            AURA_SHOW     = "항상 표시",
+            AURA_COMBAT   = "전투 중에만 숨기기",
+            AURA_ALWAYS   = "항상 숨기기",
             OPT_HIDE_TITLE = "전투 중 툴팁 숨기기",
             OPT_HIDE_DESC  = "기본값: 전투 중 툴팁이 숨겨집니다. 재정의 키를 누르고 있으면 일시적으로 표시됩니다.",
             OPT_KEY_TITLE  = "전투 중 재정의 키",
@@ -102,8 +129,11 @@ local function MakeL()
             KEY_ALT="ALT", KEY_SHIFT="SHIFT", KEY_CTRL="CTRL", KEY_NONE="없음 (항상 숨김)",
         },
         zhCN = {
-            OPT_AURA_TITLE = "战斗中隐藏自己的增益/减益提示",
-            OPT_AURA_DESC  = "战斗中隐藏自己增益和减益图标的鼠标提示。关闭后这些提示仍会显示。覆盖按键仍然有效。",
+            OPT_AURA_TITLE = "自己的增益/减益提示",
+            OPT_AURA_DESC  = "选择何时隐藏自己的增益和减益图标提示。独立于一般战斗设置。覆盖按键仅在“仅战斗中隐藏”模式下生效。",
+            AURA_SHOW     = "始终显示",
+            AURA_COMBAT   = "仅战斗中隐藏",
+            AURA_ALWAYS   = "始终隐藏",
             OPT_HIDE_TITLE = "战斗中隐藏提示信息",
             OPT_HIDE_DESC  = "默认：战斗中隐藏鼠标提示。按住覆盖按键可临时显示。",
             OPT_KEY_TITLE  = "战斗中覆盖按键",
@@ -111,8 +141,11 @@ local function MakeL()
             KEY_ALT="ALT", KEY_SHIFT="SHIFT", KEY_CTRL="CTRL", KEY_NONE="无（战斗中始终隐藏）",
         },
         zhTW = {
-            OPT_AURA_TITLE = "戰鬥中隱藏自己的增益/減益提示",
-            OPT_AURA_DESC  = "戰鬥中隱藏自己增益和減益圖示的滑鼠提示。關閉後這些提示仍會顯示。覆寫按鍵仍然有效。",
+            OPT_AURA_TITLE = "自己的增益/減益提示",
+            OPT_AURA_DESC  = "選擇何時隱藏自己的增益和減益圖示提示。獨立於一般戰鬥設定。覆寫按鍵僅在「只在戰鬥中隱藏」模式下生效。",
+            AURA_SHOW     = "一律顯示",
+            AURA_COMBAT   = "只在戰鬥中隱藏",
+            AURA_ALWAYS   = "一律隱藏",
             OPT_HIDE_TITLE = "戰鬥中隱藏提示資訊",
             OPT_HIDE_DESC  = "預設：戰鬥中隱藏滑鼠提示。按住覆寫按鍵可暫時顯示。",
             OPT_KEY_TITLE  = "戰鬥中覆寫按鍵",
@@ -139,10 +172,15 @@ HideTooltipsInCombatDB = HideTooltipsInCombatDB or {
     modifier = "ALT",  -- Override: ALT gedrückt halten => Tooltips im Kampf AN
 }
 
--- Neue Einstellung: bestehende Profile beibehalten, standardmäßig AUS.
-if HideTooltipsInCombatDB.hidePlayerAuraTooltips == nil then
-    HideTooltipsInCombatDB.hidePlayerAuraTooltips = false
+-- 8.2: Vorhandene Checkbox-Einstellung ohne Verlust auf drei Modi umstellen.
+-- Bisher: false = immer anzeigen, true = nur im Kampf ausblenden.
+if HideTooltipsInCombatDB.auraTooltipMode ~= "SHOW" and
+   HideTooltipsInCombatDB.auraTooltipMode ~= "COMBAT" and
+   HideTooltipsInCombatDB.auraTooltipMode ~= "ALWAYS" then
+    HideTooltipsInCombatDB.auraTooltipMode =
+        HideTooltipsInCombatDB.hidePlayerAuraTooltips == true and "COMBAT" or "SHOW"
 end
+HideTooltipsInCombatDB.hidePlayerAuraTooltips = nil  -- veraltete Checkbox
 
 local function IsModifierDown(mod)
     if mod == "ALT" then return IsAltKeyDown() end
@@ -194,18 +232,24 @@ local function IsPlayerAuraTooltip(tt, data)
     return false
 end
 
-local function ShouldHideTooltipInCombat(tt, data)
-    if not HideTooltipsInCombatDB.enabled then return false end
-    if not InCombatLockdown() then return false end
-
+local function IsOverrideDown()
     local mod = HideTooltipsInCombatDB.modifier or "ALT"
-    if mod ~= "NONE" and IsModifierDown(mod) then return false end
+    return mod ~= "NONE" and IsModifierDown(mod)
+end
 
-    -- Die separate Checkbox steuert ausschließlich eigene Buffs/Debuffs.
+local function ShouldHideTooltip(tt, data)
+    -- Eigene Buffs/Debuffs haben eine unabhängige Auswahl, auch außerhalb des Kampfes.
     if tt and IsPlayerAuraTooltip(tt, data) then
-        return HideTooltipsInCombatDB.hidePlayerAuraTooltips == true
+        local mode = HideTooltipsInCombatDB.auraTooltipMode
+        if mode == "ALWAYS" then return true end
+        if mode == "SHOW" then return false end
+        -- "COMBAT": temporäre Anzeige per Override-Taste möglich.
+        return InCombatLockdown() and not IsOverrideDown()
     end
-    return true
+
+    -- Alle anderen Tooltips wie bisher behandeln.
+    return HideTooltipsInCombatDB.enabled == true and
+           InCombatLockdown() and not IsOverrideDown()
 end
 
 local function RestoreTooltip(tt)
@@ -232,35 +276,29 @@ local function HideAllKnownTooltips()
         EmbeddedItemTooltip,
     }
 
-    for _, tt in ipairs(tooltips) do
-        if tt and tt.IsShown and tt:IsShown() and ShouldHideTooltipInCombat(tt) then
+    -- pairs statt ipairs: einzelne alternative Tooltip-Fenster können nil sein.
+    for _, tt in pairs(tooltips) do
+        if tt and tt.IsShown and tt:IsShown() and ShouldHideTooltip(tt) then
             ForceHideTooltip(tt)
         end
-    end
-    if ShouldHideTooltipInCombat(GameTooltip) then
-        ForceHideTooltip(GameTooltip)
     end
 end
 
 local function RefreshVisibleTooltips()
-    if InCombatLockdown() and ShouldHideTooltipInCombat() then
-        HideAllKnownTooltips()
-        if C_Timer and C_Timer.After then
-            C_Timer.After(0, function()
-                if InCombatLockdown() and ShouldHideTooltipInCombat() then
-                    HideAllKnownTooltips()
-                end
-            end)
-        end
-    else
-        -- wenn wir nicht verstecken sollen: Tooltip wieder normal sichtbar machen
+    -- Bei Moduswechsel auch außerhalb des Kampfes sofort reagieren.
+    -- Nur die Deckkraft zurücksetzen, keine ausgeblendeten Tooltips neu öffnen.
+    if not ShouldHideTooltip(GameTooltip) then
         RestoreTooltip(GameTooltip)
+    end
+    HideAllKnownTooltips()
+    if C_Timer and C_Timer.After then
+        C_Timer.After(0, HideAllKnownTooltips)
     end
 end
 
 -- Block new tooltips while hiding is active
 GameTooltip:HookScript("OnShow", function(self)
-    if ShouldHideTooltipInCombat(self) then
+    if ShouldHideTooltip(self) then
         self:Hide()
     else
         RestoreTooltip(self)
@@ -272,22 +310,19 @@ end)
 if TooltipDataProcessor and TooltipDataProcessor.AddTooltipPostCall and
    Enum and Enum.TooltipDataType and Enum.TooltipDataType.UnitAura then
     TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.UnitAura, function(tooltip, data)
-        if IsPlayerAuraTooltip(tooltip, data) and ShouldHideTooltipInCombat(tooltip, data) then
+        if IsPlayerAuraTooltip(tooltip, data) and ShouldHideTooltip(tooltip, data) then
             if tooltip.Hide then tooltip:Hide() end
         end
     end)
 end
 
--- Extra Guard: Wenn ein Element den Tooltip im Kampf ständig erneut anzeigen will,
--- halten wir ihn per OnUpdate zuverlässig versteckt.
+-- Extra Guard: Deckt auch den "immer ausblenden"-Modus außerhalb des Kampfes ab.
 local guardActive = false
 frame:SetScript("OnUpdate", function()
-    if InCombatLockdown() and ShouldHideTooltipInCombat() then
-        if GameTooltip and GameTooltip:IsShown() and ShouldHideTooltipInCombat(GameTooltip) then
-            HideAllKnownTooltips()
-        end
+    if GameTooltip and GameTooltip:IsShown() and ShouldHideTooltip(GameTooltip) then
+        ForceHideTooltip(GameTooltip)
         guardActive = true
-    elseif guardActive then
+    elseif guardActive and not ShouldHideTooltip(GameTooltip) then
         RestoreTooltip(GameTooltip)
         guardActive = false
     end
@@ -319,20 +354,34 @@ local function CreateOptions()
         Settings.CreateCheckbox(category, setting, L.OPT_HIDE_DESC)
     end
 
-    -- Eigene Buff-/Debuff-Tooltips separat ein-/ausschalten.
+    -- Eigene Buff-/Debuff-Tooltips: immer anzeigen / nur im Kampf / immer aus.
     do
         local setting = Settings.RegisterProxySetting(
-            category, "HTIC_PLAYER_AURA_TOOLTIPS",
-            Settings.VarType.Boolean,
+            category, "HTIC_PLAYER_AURA_TOOLTIP_MODE",
+            Settings.VarType.String,
             L.OPT_AURA_TITLE,
-            false,
-            function() return HideTooltipsInCombatDB.hidePlayerAuraTooltips end,
+            "SHOW",
+            function() return HideTooltipsInCombatDB.auraTooltipMode end,
             function(v)
-                HideTooltipsInCombatDB.hidePlayerAuraTooltips = v and true or false
-                RefreshVisibleTooltips()
+                if v == "SHOW" or v == "COMBAT" or v == "ALWAYS" then
+                    HideTooltipsInCombatDB.auraTooltipMode = v
+                    RefreshVisibleTooltips()
+                end
             end
         )
-        Settings.CreateCheckbox(category, setting, L.OPT_AURA_DESC)
+
+        local function GetOptions()
+            local container = Settings.CreateControlTextContainer()
+            container:Add("SHOW",   L.AURA_SHOW)
+            container:Add("COMBAT", L.AURA_COMBAT)
+            container:Add("ALWAYS", L.AURA_ALWAYS)
+            return container:GetData()
+        end
+
+        local create = Settings.CreateDropDown or Settings.CreateDropdown
+        if create then
+            create(category, setting, GetOptions, L.OPT_AURA_DESC)
+        end
     end
 
     -- Dropdown (ControlTextContainer -> lesbare Menu-Items)
