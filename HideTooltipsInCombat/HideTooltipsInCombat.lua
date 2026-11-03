@@ -273,13 +273,18 @@ local function HideAllKnownTooltips()
         ShoppingTooltip2,
         ShoppingTooltip3,
         WorldMapTooltip,
-        EmbeddedItemTooltip,
     }
 
     -- pairs statt ipairs: einzelne alternative Tooltip-Fenster können nil sein.
+    -- Geschützte Blizzard-Frames können IsShown() im Kampf verweigern.
     for _, tt in pairs(tooltips) do
-        if tt and tt.IsShown and tt:IsShown() and ShouldHideTooltip(tt) then
-            ForceHideTooltip(tt)
+        if tt then
+            local ok, shown = pcall(function()
+                return tt:IsShown()
+            end)
+            if ok and shown and ShouldHideTooltip(tt) then
+                ForceHideTooltip(tt)
+            end
         end
     end
 end
